@@ -50,6 +50,7 @@ price_min, price_max   = float(df["price"].min()), float(df["price"].max())
 # DASH APP
 # -----------------------------------------
 app = Dash(__name__)
+server = app.server
 
 # -----------------------------------------
 # LAYOUT
@@ -350,4 +351,4 @@ def update_dashboard(city, area, food_type, rating_range, price_range):
 # RUN APP
 # -----------------------------------------
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host="0.0.0.0", port=8050, debug=False)
