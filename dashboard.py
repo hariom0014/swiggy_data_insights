@@ -8,7 +8,12 @@ from dash.dash_table import DataTable   # safer than "from dash import dash_tabl
 # LOAD YOUR DATASET
 # -----------------------------------------
 # Change path if needed
-df = pd.read_csv(r"C:\Users\intel\Downloads\swiggy.csv")
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+CSV_PATH = os.path.join(BASE_DIR, "swiggy.csv")
+
+df = pd.read_csv(CSV_PATH)
 
 # Clean column names
 df.columns = (
